@@ -1,0 +1,1679 @@
+{
+	"variables": [],
+	"info": {
+		"name": "smshosting-rest-api",
+		"_postman_id": "236e8b99-db7d-a41d-aed8-5df6d3ce705d",
+		"description": "Collection of smshosting api queries\n\nhttp://smshosting.local/it/docs/sms-rest-api/introduzione\n\nFor run queries you need a Smshosting's account and related authentication keys (AUTH_KEY,AUTH_SECRET)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "alias",
+			"description": "",
+			"item": [
+				{
+					"name": "Get alias list",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/alias/list",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Create alias",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/alias/",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "alias",
+									"value": "testAlias",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "businessname",
+									"value": "nome azienda",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "address",
+									"value": "via masi simonetti 48",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "city",
+									"value": "belluno",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "postcode",
+									"value": "32100",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "province",
+									"value": "BL",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "country",
+									"value": "IT",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "vatnumber",
+									"value": "01019390259",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "email",
+									"value": "fake@smshosting.it",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "phone",
+									"value": "3480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "taxcode",
+									"value": "01019390259",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete alias",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/alias/1234",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact phonebook",
+			"description": "",
+			"item": [
+				{
+					"name": "search contacts",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/contact/search?name=test&offset=0&limit=20",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "contact detail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/contact/393480000000",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/contact",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "msisdn",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "email",
+									"value": "test@test.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "groupsId",
+									"value": "0",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/contact/393480000000",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "msisdn",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "email",
+									"value": "test@test.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "groupsId",
+									"value": "0",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete contact",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/contact/393480000000",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "custom fields",
+			"description": "",
+			"item": [
+				{
+					"name": "list custom fields",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/customfields/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "group phonebook",
+			"description": "",
+			"item": [
+				{
+					"name": "group list",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "group detail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "contacts of group",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group/1/contacts",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create group",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update group",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group/1",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete group",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/phonebook/group/1?delete_contacts=true",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "receivesms",
+			"description": "",
+			"item": [
+				{
+					"name": "search sms ricevuti",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/received/search?from=393480000000&simIdRef=&fromDate=&toDate&offset=0&limit=20",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "list sim",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/received/sim/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reseller",
+			"description": "",
+			"item": [
+				{
+					"name": "Create subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "testapisub2017",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "testapisub2017!",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "name",
+									"value": "mario",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "rossi",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "email",
+									"value": "fake@smshosting.it",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Update subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/61301",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "mario-updated",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "rossi-updated",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "email",
+									"value": "fake-update@smshosting.it",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Get pacchetti rivenditore",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/pack/list",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/60363",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Get subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/61301",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Create order subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/61301/order",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "packId",
+									"value": "2074",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "newPackSmsItaly",
+									"value": "14",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove credit from subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/60363/credit/remove",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				},
+				{
+					"name": "Search subuser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/reseller/subuser/search?query=testapisub2017",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "send push",
+			"description": "",
+			"item": [
+				{
+					"name": "send push",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/send",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "push di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "onlyPush",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "date",
+									"value": "2017-03-24T00:00:00+0100",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "transactionId",
+									"value": "123456789ABCDE",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "sandbox",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "smsFrom",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsText",
+									"value": "push di test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsEncoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "send push img",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/send",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "push di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "onlyPush",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "date",
+									"value": "2017-03-24T00:00:00+0100",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "transactionId",
+									"value": "123456789ABCDE",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "sandbox",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "smsFrom",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsText",
+									"value": "push di test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsEncoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"enabled": true,
+									"src": "facebook_messenger1600.png"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "estimate",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/estimate",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "push di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "onlyPush",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "smsFrom",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsText",
+									"value": "push di test",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "smsEncoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "search push",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/search?id&transactionId=123456789ABCDE&msisdn&fromDate&toDate&status&offset=0&limit=20",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get multimedia",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/multimedia/aqslBlgcPcc=",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create invitation",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/push/invitation",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "39348000000",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sendsms",
+			"description": "",
+			"item": [
+				{
+					"name": "send sms",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/send",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "sms di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "date",
+									"value": "2017-03-24T00:00:00+0100",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "transactionId",
+									"value": "123456789ABCDE",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "sandbox",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "statusCallback",
+									"value": "http://user_callback",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "encoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "send sms bulk",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/sendbulk",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "sms di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "date",
+									"value": "2017-03-24T00:00:00+0100",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "transactionId",
+									"value": "123456789ABCDE",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "sandbox",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "statusCallback",
+									"value": "http://user_callback",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "encoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "estimate",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/estimate",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "gruppo",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "text",
+									"value": "sms di test",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "encoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cancel sms",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/cancel",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "transactionId",
+									"value": "123456789ABCDE",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "search sms",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/sms/search?id&transactionId=123456789ABCDE&msisdn&fromDate&toDate&status&offset=0&limit=20",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "campagna rest",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "group",
+									"value": "91147",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sms otp",
+			"description": "",
+			"item": [
+				{
+					"name": "send code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/verify/send",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "393480000000",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "text",
+									"value": "your code: ${verify_code}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "from",
+									"value": "www.SmsH.it",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "sandbox",
+									"value": "true",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "app_id",
+									"value": "myappid",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "encoding",
+									"value": "7BIT",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "code_len",
+									"value": "5",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "max_retry",
+									"value": "5",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "ttl",
+									"value": "300",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "verify code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/verify/check?verify_id=334ecb42ebda471a02adfa044b546e94c2059c97&verify_code=1234",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cancel code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/verify/command",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "verify_id",
+									"value": "334ecb42ebda471a02adfa044b546e94c2059c97",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "command",
+									"value": "DELETE",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "search code",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/verify/search?verify_id=334ecb42ebda471a02adfa044b546e94c2059c97",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "{{auth_key}}",
+								"password": "{{auth_secret}}",
+								"saveHelperData": true,
+								"showPassword": false
+							}
+						},
+						"url": "{{BaseUrl}}/rest/api/user",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Create subuser"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
