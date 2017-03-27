@@ -23,3 +23,11 @@ Una volta scaricato il tool
 1.  Cliccare su Import.
 2.  Selezionare il file smshosting-rest-api.postman_collection dal punto dove hai clonato il repository.
 
+A questo punto è necessario configurare l'environment con le credenziali del proprio account di Smshosting.
+
+1.  Cliccare su Manage Enviroments quindi premere il tasto Import.
+2.  Selezionare il file SMSH_EMPTY.postman_environment dal punto dove hai clonato il repository.
+3.  Rimpiazzare i valori di auth_key e auth_secret con i token relativi al proprio account. 
+
+Fare riferimento alla pagina https://www.smshosting.it/it/docs/sms-rest-api/effettuare-una-richiesta per ottenere i token
+
